@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Hello!</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <style src="css/webcel.css"></style>
+</head>
+
+<body>
+    <h1>Hello, world!</h1>
+
+    <p id="count">Persons in base: 0</p>
+    <p id= "average" >Average age of persons in base: n/a</p>
+    <p id= "min">Youngest person have: n/a years</p>
+    <p id= "max">Oldest person have: n/a years</p>
+
+
+    <input type="text" id="name" value="name" />
+    <input type="number" id="age" value="age" />
+    <input type="button" onclick="addToTable()" value="Add to table" />
+
+
+    <table style="width:100%" class="table-striped" id="mytable">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Age</th>
+        </tr>
+
+    </table>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="js/webcel.js"></script>
+</body>
+
+</html>
