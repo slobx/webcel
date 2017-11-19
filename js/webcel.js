@@ -2,6 +2,8 @@ var sumAges = 0;
 var avgAge = 0;
 var totalPersons = 0;
 var ages = [];
+var names = [];
+var table = document.getElementById("mytable");
 
 function mini(nums) {
     var min = nums[0];
@@ -40,7 +42,7 @@ function main() { // function definition
     var name = nameEl.value;
     var age = parseInt(ageEl.value);
 
-    var table = document.getElementById("mytable");
+
     var row = table.insertRow(table.rows.length);
     var cellId = row.insertCell(0);
     var cellName = row.insertCell(1);
@@ -53,6 +55,7 @@ function main() { // function definition
     cellAge.innerHTML = age;
 
     ages.push(age);
+    names.push(name);
 
     sumAges = (sumAges + age);
     totalPersons = id++;
@@ -66,5 +69,43 @@ function main() { // function definition
 function addToTable() {
 
     main();
+
+}
+
+function sortNum(numArray) {
+    function sortNumber(a, b) {
+        return a - b;
+    }
+
+    numArray = numArray.sort(sortNumber);
+    return numArray;
+}
+
+function sortByAge() {
+
+    //delete all rows first
+    var tableHeaderRowCount = 1;
+    var rowCount = table.rows.length;
+    for (var i = tableHeaderRowCount; i < rowCount; i++) {
+        table.deleteRow(tableHeaderRowCount);
+    }
+
+    var sortedAges = [];
+    sortedAges = sortNum(ages);
+
+    for (var index = 0; index < names.length; index++) {
+
+        var row = table.insertRow(table.rows.length);
+        var cellId = row.insertCell(0);
+        var cellName = row.insertCell(1);
+        var cellAge = row.insertCell(2);
+
+        var id = table.rows.length - 1;
+
+        cellId.innerHTML = index + 1;
+        cellName.innerHTML = names[index];
+        cellAge.innerHTML = sortedAges[index];
+
+    }
 
 }
